@@ -96,7 +96,7 @@ class EmbGAM(BaseEstimator):
         model = transformers.AutoModel.from_pretrained(
             self.checkpoint).to(device)
         tokenizer_embeddings = transformers.AutoTokenizer.from_pretrained(
-            self.checkpoint)
+            "camembert/camembert-base")
 
         # get embs
         if verbose:
