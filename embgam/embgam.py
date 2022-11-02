@@ -246,7 +246,7 @@ class EmbGAM(BaseEstimator):
         preds = []
         n_unseen_ngrams = 0
         for x in X:
-            pred = 0
+            pred = np.array([0,0,0,0])
             seqs = embgam.embed.generate_ngrams_list(
                 x,
                 ngrams=self.ngrams,
