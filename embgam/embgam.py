@@ -195,8 +195,9 @@ class EmbGAM(BaseEstimator):
             embs = self.normalizer.transform(embs)
 
         # save coefs
+        print(embs.shape)
         coef_embs = self.linear.coef_.squeeze()
-        linear_coef = embs @ coef_embs
+        print(coef_embs.shape)
         self.coefs_dict_ = {
             **coefs_dict_old,
             **{ngrams_list[i]: linear_coef[i]
